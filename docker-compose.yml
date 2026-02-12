@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: lol_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: govec
+      POSTGRES_PASSWORD: cochinillo
+      POSTGRES_DB: performance_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
